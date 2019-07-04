@@ -31,6 +31,7 @@ int GetTranslationCount(int number)
         return 0;
 
     string numberInString = to_string(number);
+	cout << " GetTranslationCount: " << numberInString << endl;
     return GetTranslationCount(numberInString);
 }
 
@@ -74,6 +75,7 @@ int GetTranslationCount(const string& number)
 // ====================²âÊÔ´úÂë====================
 void Test(const string& testName, int number, int expected)
 {
+	cout << " number: " << number << ", expected: " << expected << endl;
     if(GetTranslationCount(number) == expected)
         cout << testName << " passed." << endl;
     else
@@ -155,5 +157,6 @@ int main(int argc, char* argv[])
     Test8();
     Test9();
 
+	system("pause");
     return 0;
 }

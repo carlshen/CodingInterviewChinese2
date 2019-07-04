@@ -18,6 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // ±í3ËùÊ¾¡£
 
 #include <cstdio>
+#include <iostream>
 #include "..\Utilities\List.h"
 
 ListNode* Merge(ListNode* pHead1, ListNode* pHead2)
@@ -157,6 +158,7 @@ int main(int argc, char* argv[])
     Test4();
     Test5();
 
+	system("pause");
     return 0;
 }
 

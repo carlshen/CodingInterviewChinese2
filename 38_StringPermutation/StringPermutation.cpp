@@ -17,6 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 则打印出由字符a、b、c所能排列出来的所有字符串abc、acb、bac、bca、cab和cba。
 
 #include <cstdio>
+#include <iostream>
 
 void Permutation(char* pStr, char* pBegin);
 
@@ -80,6 +81,7 @@ int main(int argc, char* argv[])
     char string4[] = "abc";
     Test(string4);
 
+	system("pause");
     return 0;
 }
 

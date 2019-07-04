@@ -17,6 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 
 #include "..\Utilities\List.h"
 #include <stack>
+#include <iostream>
 
 void PrintListReversingly_Iteratively(ListNode* pHead)
 {
@@ -106,6 +107,7 @@ int main(int argc, char* argv[])
     Test2();
     Test3();
 
+	system("pause");
     return 0;
 }
 

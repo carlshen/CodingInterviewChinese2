@@ -21,6 +21,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 #include "..\Utilities\BinaryTree.h"
 #include <exception>
 #include <cstdio>
+#include <iostream>
 
 BinaryTreeNode* ConstructCore(int* startPreorder, int* endPreorder, int* startInorder, int* endInorder);
 
@@ -214,6 +215,7 @@ int main(int argc, char* argv[])
     Test6();
     Test7();
 
+	system("pause");
     return 0;
 }
 

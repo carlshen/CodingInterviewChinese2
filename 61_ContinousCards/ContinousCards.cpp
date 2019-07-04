@@ -18,7 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 
 #include <cstdio>
 #include <cstdlib>
-
+#include <iostream>
 int Compare(const void *arg1, const void *arg2);
 
 bool IsContinuous(int* numbers, int length)
@@ -157,6 +157,7 @@ int main(int argc, char* argv[])
     Test11();
     Test12();
 
+	system("pause");
     return 0;
 }
 

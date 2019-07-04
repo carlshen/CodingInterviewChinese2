@@ -18,6 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // ‘Ú ‰≥ˆ"student. a am I"°£
 
 #include <cstdio>
+#include <iostream>
 #include "..\Utilities\StringUtil.h"
 #include <string>
 
@@ -63,7 +64,10 @@ void Test(const char* testName, char* input, const char* expectedResult)
     if(testName != nullptr)
         printf("%s begins: ", testName);
 
+	printf("\nbefore input: %s \n ", input);
+	printf("before expectedResult: %s \n ", expectedResult);
     ReverseSentence(input);
+	printf("after reverse input: %s \n ", input);
 
     if((input == nullptr && expectedResult == nullptr)
         || (input != nullptr && strcmp(input, expectedResult) == 0))
@@ -118,6 +122,7 @@ int main(int argc, char* argv[])
     Test4();
     Test5();
 
+	system("pause");
     return 0;
 }
 

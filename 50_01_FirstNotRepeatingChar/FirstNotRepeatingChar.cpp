@@ -18,6 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 
 #include <cstdio>
 #include <string>
+#include <iostream>
 
 char FirstNotRepeatingChar(const char* pString)
 {
@@ -48,6 +49,7 @@ char FirstNotRepeatingChar(const char* pString)
 // ====================≤‚ ‘¥˙¬Î====================
 void Test(const char* pString, char expected)
 {
+	printf("string: %s, expected: %c \n", pString, expected);
     if(FirstNotRepeatingChar(pString) == expected)
         printf("Test passed.\n");
     else
@@ -68,6 +70,7 @@ int main(int argc, char* argv[])
     // ¬≥∞Ù–‘≤‚ ‘£¨ ‰»Înullptr
     Test(nullptr, '\0');
 
+	system("pause");
     return 0;
 }
 

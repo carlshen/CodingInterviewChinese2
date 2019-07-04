@@ -17,6 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 找出那个吃出现一次的数字。
 
 #include <cstdio>
+#include <iostream>
 #include <exception>
 
 int FindNumberAppearingOnce(int numbers[], int length)
@@ -142,5 +143,6 @@ int main(int argc, char* argv[])
     Test8();
     Test9();
 
+	system("pause");
     return 0;
 }

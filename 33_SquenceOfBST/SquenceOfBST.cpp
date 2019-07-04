@@ -17,6 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 如果是则返回true，否则返回false。假设输入的数组的任意两个数字都互不相同。
 
 #include <cstdio>
+#include <iostream>
 
 // BST：Binary Search Tree，二叉搜索树
 bool VerifySquenceOfBST(int sequence[], int length)
@@ -154,6 +155,7 @@ int main(int argc, char* argv[])
     Test7();
     Test8();
 
+	system("pause");
     return 0;
 }
 

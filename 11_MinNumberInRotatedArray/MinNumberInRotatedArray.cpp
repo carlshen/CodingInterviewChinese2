@@ -19,6 +19,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 
 #include <cstdio>
 #include <exception>
+#include <iostream>
 
 int MinInOrder(int* numbers, int index1, int index2);
 
@@ -123,6 +124,7 @@ int main(int argc, char* argv[])
     //  ‰»Înullptr
     Test(nullptr, 0, 0);
 
+	system("pause");
     return 0;
 }
 

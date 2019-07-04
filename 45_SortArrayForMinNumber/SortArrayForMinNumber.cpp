@@ -20,6 +20,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 #include "cstdio"
 #include <string>
 #include <algorithm>
+#include <iostream>
 
 int compare(const void* strNumber1, const void* strNumber2);
 
@@ -129,6 +130,7 @@ int main(int argc, char* argv[])
     Test5();
     Test6();
 
+	system("pause");
     return 0;
 }
 

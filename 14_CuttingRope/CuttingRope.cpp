@@ -83,6 +83,7 @@ int maxProductAfterCutting_solution2(int length)
 // ====================²âÊÔ´úÂë====================
 void test(const char* testName, int length, int expected)
 {
+	std::cout << "test length " << length << " , expected:" << expected  << std::endl;
     int result1 = maxProductAfterCutting_solution1(length);
     if(result1 == expected)
         std::cout << "Solution1 for " << testName << " passed." << std::endl;
@@ -187,5 +188,6 @@ int main(int agrc, char* argv[])
     test10();
     test11();
 
+	system("pause");
     return 0;
 }

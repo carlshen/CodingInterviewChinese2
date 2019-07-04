@@ -18,6 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 
 #include <cstdio>
 #include <memory>
+#include <iostream>
 
 void PrintNumber(char* number);
 bool Increment(char* number);
@@ -150,6 +151,7 @@ int main(int argc, char* argv[])
     Test(0);
     Test(-1);
 
+	system("pause");
     return 0;
 }
 

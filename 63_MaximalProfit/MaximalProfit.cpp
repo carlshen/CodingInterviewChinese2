@@ -19,6 +19,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 收获最大的利润11。
 
 #include <cstdio>
+#include <iostream>
 
 int MaxDiff(const int* numbers, unsigned length)
 {
@@ -47,6 +48,7 @@ void Test(const char* testName, const int* numbers, unsigned int length, int exp
     if(testName != nullptr)
         printf("%s begins: ", testName);
 
+	printf("length: %d,  expected: %d ", length, expected);
     if(MaxDiff(numbers, length) == expected)
         printf("Passed.\n");
     else
@@ -114,5 +116,6 @@ int main(int argc, char* argv[])
 	 Test7();
 	 Test8();
 
+	system("pause");
     return 0;
 }

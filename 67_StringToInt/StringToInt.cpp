@@ -17,7 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 能使用atoi或者其他类似的库函数。
 
 #include <cstdio>
-
+#include <iostream>
 long long StrToIntCore(const char* str, bool minus);
 
 enum Status {kValid = 0, kInvalid};
@@ -125,5 +125,6 @@ int main(int argc, char* argv[])
 
     Test("-");
 
+	system("pause");
     return 0;
 }

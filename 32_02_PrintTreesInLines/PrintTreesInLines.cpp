@@ -17,6 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 打印到一行。
 
 #include <cstdio>
+#include <iostream>
 #include "..\Utilities\BinaryTree.h"
 #include <queue>
 
@@ -204,6 +205,7 @@ int main(int argc, char* argv[])
     Test5();
     Test6();
 
+	system("pause");
     return 0;
 }
 

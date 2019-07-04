@@ -189,6 +189,7 @@ int main(int argc, char* argv[])
     Test6();
     Test7();
 
+	system("pause");
     return 0;
 }
 

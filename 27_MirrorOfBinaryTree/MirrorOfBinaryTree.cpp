@@ -201,6 +201,7 @@ int main(int argc, char* argv[])
     Test4();
     Test5();
 
+	system("pause");
     return 0;
 }
 

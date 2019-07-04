@@ -18,6 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // “1a3.14”、“1.2.3”、“+-5”及“12e+5.4”都不是
 
 #include <stdio.h>
+#include <iostream>
 
 bool scanUnsignedInteger(const char** str);
 bool scanInteger(const char** str);
@@ -81,6 +82,10 @@ void Test(const char* testName, const char* str, bool expected)
     if(testName != nullptr)
         printf("%s begins: ", testName);
 
+	if (str != nullptr) {
+		std::cout << "test string: " << str << std::endl;
+		std::cout << "test expected: " << expected << std::endl;
+	}
     if(isNumeric(str) == expected)
         printf("Passed.\n");
     else
@@ -115,5 +120,6 @@ int main(int argc, char* argv[])
     Test("Test20", "", false);
     Test("Test21", nullptr, false);
 
+	system("pause");
     return 0;
 }

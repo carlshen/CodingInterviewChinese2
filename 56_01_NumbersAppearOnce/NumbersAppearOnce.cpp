@@ -17,6 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 找出这两个只出现一次的数字。要求时间复杂度是O(n)，空间复杂度是O(1)。
 
 #include <cstdio>
+#include <iostream>
 
 unsigned int FindFirstBitIs1(int num);
 bool IsBit1(int num, unsigned int indexBit);
@@ -102,6 +103,7 @@ int main(int argc, char* argv[])
     Test2();
     Test3();
 
+	system("pause");
     return 0;
 }
 

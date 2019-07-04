@@ -23,50 +23,64 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 
 bool IsPopOrder(const int* pPush, const int* pPop, int nLength)
 {
-    bool bPossible = false;
+	bool bPossible = false;
 
-    if(pPush != nullptr && pPop != nullptr && nLength > 0)
-    {
-        const int* pNextPush = pPush;
-        const int* pNextPop = pPop;
+	if (pPush != nullptr && pPop != nullptr && nLength > 0)
+	{
+		const int* pNextPush = pPush;
+		const int* pNextPop = pPop;
 
-        std::stack<int> stackData;
+		std::stack<int> stackData;
 
-        while(pNextPop - pPop < nLength)
-        {
-            // 当辅助栈的栈顶元素不是要弹出的元素
-            // 先压入一些数字入栈
-            while(stackData.empty() || stackData.top() != *pNextPop)
-            {
-                // 如果所有数字都压入辅助栈了，退出循环
-                if(pNextPush - pPush == nLength)
-                    break;
+		while (pNextPop - pPop < nLength)
+		{
+			// 当辅助栈的栈顶元素不是要弹出的元素
+			// 先压入一些数字入栈
+			while (stackData.empty() || stackData.top() != *pNextPop)
+			{
+				// 如果所有数字都压入辅助栈了，退出循环
+				if (pNextPush - pPush == nLength)
+					break;
 
-                stackData.push(*pNextPush);
+				stackData.push(*pNextPush);
 
-                pNextPush ++;
-            }
+				pNextPush++;
+			}
 
-            if(stackData.top() != *pNextPop)
-                break;
+			if (stackData.top() != *pNextPop)
+				break;
 
-            stackData.pop();
-            pNextPop ++;
-        }
+			stackData.pop();
+			pNextPop++;
+		}
 
-        if(stackData.empty() && pNextPop - pPop == nLength)
-            bPossible = true;
-    }
+		if (stackData.empty() && pNextPop - pPop == nLength)
+			bPossible = true;
+	}
 
-    return bPossible;
+	return bPossible;
 }
 
+void printArray(const int* pPush, int len) {
+	if (pPush == nullptr) {
+		return;
+	}
+	for (int i = 0; i < len; i++) {
+		if ((pPush+i) != nullptr) {
+			printf("\t %d, ", *(pPush + i));
+		}
+	}
+}
 // ====================测试代码====================
 void Test(const char* testName, const int* pPush, const int* pPop, int nLength, bool expected)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
-
+	printf("expected: %d, \npPush: ", expected);
+	printArray(pPush, nLength);
+	printf("\npPop: ");
+	printArray(pPop, nLength);
+	printf("\n");
     if(IsPopOrder(pPush, pPop, nLength) == expected)
         printf("Passed.\n");
     else
@@ -78,7 +92,7 @@ void Test1()
     const int nLength = 5;
     int push[nLength] = {1, 2, 3, 4, 5};
     int pop[nLength] = {4, 5, 3, 2, 1};
-    
+
     Test("Test1", push, pop, nLength, true);
 }
 
@@ -143,6 +157,7 @@ int main(int argc, char* argv[])
     Test6();
     Test7();
 
+	system("pause");
     return 0;
 }
 

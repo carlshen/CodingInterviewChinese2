@@ -17,6 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 它的镜像一样，那么它是对称的。
 
 #include <cstdio>
+#include <iostream>
 #include "../Utilities/BinaryTree.h"
 
 bool isSymmetrical(BinaryTreeNode* pRoot1, BinaryTreeNode* pRoot2);
@@ -309,4 +310,7 @@ void main(int argc, char* argv[])
     Test8();
     Test9();
     Test10();
+
+	system("pause");
+	return;
 }

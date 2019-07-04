@@ -17,6 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // Í·½áµã¡£
 
 #include <cstdio>
+#include <iostream>
 #include "..\Utilities\List.h"
 
 ListNode* ReverseList(ListNode* pHead)
@@ -95,6 +96,7 @@ int main(int argc, char* argv[])
     Test2();
     Test3();
 
+	system("pause");
     return 0;
 }
 

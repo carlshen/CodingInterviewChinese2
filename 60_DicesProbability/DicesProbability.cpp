@@ -18,7 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 
 #include <cstdio>
 #include <math.h>
-
+#include <iostream>
 int g_maxValue = 6;
  
 // ====================·½·¨Ò»====================
@@ -139,6 +139,7 @@ int main(int argc, char* argv[])
 
     Test(0);
 
+	system("pause");
     return 0;
 }
 

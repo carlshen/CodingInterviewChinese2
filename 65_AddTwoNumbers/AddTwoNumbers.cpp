@@ -17,7 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // ËÄÔòÔËËã·ûºÅ¡£
 
 #include <cstdio>
-
+#include <iostream>
 int Add(int num1, int num2)
 {
     int sum, carry;
@@ -38,6 +38,7 @@ int Add(int num1, int num2)
 void Test(int num1, int num2, int expected)
 {
     int result = Add(num1, num2);
+	printf("num1: %d , num2: %d expected: %d\n", num1, num2, expected);
     if(result == expected)
         printf("%d + %d is %d. Passed\n", num1, num2, result);
     else
@@ -57,6 +58,7 @@ int main(int argc, char* argv[])
 
     Test(-2, -8, -10);
 
+	system("pause");
     return 0;
 }
 

@@ -137,5 +137,6 @@ int main(int argc, char* argv[])
     numbers.Insert(8);
     Test("Test10", numbers, 4);
 
+	system("pause");
     return 0;
 }

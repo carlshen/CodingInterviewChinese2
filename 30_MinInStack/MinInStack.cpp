@@ -58,6 +58,7 @@ int main(int argc, char* argv[])
     stack.push(0);
     Test("Test8", stack, 0);
 
+	system("pause");
     return 0;
 }
 

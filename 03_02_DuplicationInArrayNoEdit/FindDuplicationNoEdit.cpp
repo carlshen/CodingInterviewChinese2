@@ -19,6 +19,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 输出是重复的数字2或者3。
 
 #include <iostream>
+#include <iostream>
 
 int countRange(const int* numbers, int length, int start, int end);
 
@@ -75,7 +76,7 @@ void test(const char* testName, int* numbers, int length, int* duplications, int
     {
         if(result == duplications[i])
         {
-            std::cout << testName << " passed." << std::endl;
+            std::cout << testName << " passed with result " << result << std::endl;
             return;
         }
     }
@@ -174,4 +175,6 @@ void main()
     test8();
     test9();
     test10();
+	system("pause");
+	return;
 }

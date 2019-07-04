@@ -17,7 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 3, 3, 4, 5}和数字3，由于3在这个数组中出现了4次，因此输出4。
 
 #include <cstdio>
-
+#include <iostream>
 int GetFirstK(const int* data, int length, int k, int start, int end);
 int GetLastK(const int* data, int length, int k, int start, int end);
 
@@ -94,6 +94,7 @@ void Test(const char* testName, int data[], int length, int k, int expected)
         printf("%s begins: ", testName);
 
     int result = GetNumberOfK(data, length, k);
+	printf(" result: %d, K: %d, expected: %d \n", result, k, expected);
     if(result == expected)
         printf("Passed.\n");
     else
@@ -190,6 +191,7 @@ int main(int argc, char* argv[])
     Test10();
     Test11();
 
+	system("pause");
     return 0;
 }
 

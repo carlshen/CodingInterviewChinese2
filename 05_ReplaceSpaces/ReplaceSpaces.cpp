@@ -18,6 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 
 #include <cstdio>
 #include <cstring>
+#include <iostream>
 
 /*length 为字符数组str的总容量，大于或等于字符串str的实际长度*/
 void ReplaceBlank(char str[], int length)
@@ -171,6 +172,7 @@ int main(int argc, char* argv[])
     Test8();
     Test9();
 
+	system("pause");
     return 0;
 }
 

@@ -17,6 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 把9表示成二进制是1001，有2位是1。因此如果输入9，该函数输出2。
 
 #include <cstdio>
+#include <iostream>
 
 int NumberOf1_Solution1(int n)
 {
@@ -49,6 +50,7 @@ int NumberOf1_Solution2(int n)
 // ====================测试代码====================
 void Test(int number, unsigned int expected)
 {
+	std::cout << "test number " << number << " , expected:" << expected << std::endl;
     int actual = NumberOf1_Solution1(number);
     if (actual == expected)
         printf("Solution1: Test for %p passed.\n", number);
@@ -84,6 +86,7 @@ int main(int argc, char* argv[])
     // 输入0x80000000（负数），期待的输出是1
     Test(0x80000000, 1);
 
+	system("pause");
     return 0;
 }
 

@@ -16,6 +16,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 题目：输入两个链表，找出它们的第一个公共结点。
 
 #include <cstdio>
+#include <iostream>
 #include "..\Utilities\List.h"
 
 unsigned int GetListLength(ListNode* pHead);
@@ -233,6 +234,7 @@ int main(int argc, char* argv[])
     Test5();
     Test6();
 
+	system("pause");
     return 0;
 }
 

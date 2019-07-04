@@ -82,6 +82,7 @@ bool equal(double num1, double num2)
 // ====================测试代码====================
 void Test(const char* testName, double base, int exponent, double expectedResult, bool expectedFlag)
 {
+	std::cout << "test base " << base << " , exponent: " << exponent << ", expectedResult: " << expectedResult << std::endl;
     double result = Power(base, exponent);
     if (equal(result, expectedResult) && g_InvalidInput == expectedFlag)
         std::cout << testName << " passed" << std::endl;
@@ -112,6 +113,7 @@ int main(int argc, char* argv[])
     // 底数为0、指数为负数
     Test("Test7", 0, -4, 0, true);
 
+	system("pause");
     return 0;
 }
 

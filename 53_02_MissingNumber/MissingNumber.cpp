@@ -18,7 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 中，请找出这个数字。
 
 #include <cstdio>
-
+#include <iostream>
 int GetMissingNumber(const int* numbers, int length)
 {
     if(numbers == nullptr || length <= 0)
@@ -116,5 +116,6 @@ int main(int argc, char* argv[])
     Test5();
     Test6();
 
+	system("pause");
     return 0;
 }

@@ -18,6 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 整数，判断数组中是否含有该整数。
 
 #include <cstdio>
+#include <iostream>
 
 bool Find(int* matrix, int rows, int columns, int number)
 {
@@ -139,6 +140,7 @@ int main(int argc, char* argv[])
     Test6();
     Test7();
 
+	system("pause");
     return 0;
 }
 

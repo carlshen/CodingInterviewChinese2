@@ -19,6 +19,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 值为4的结点。
 
 #include <cstdio>
+#include <iostream>
 #include "..\Utilities\List.h"
 
 ListNode* FindKthToTail(ListNode* pListHead, unsigned int k)
@@ -178,6 +179,7 @@ int main(int argc, char* argv[])
     Test5();
     Test6();
 
+	system("pause");
     return 0;
 }
 

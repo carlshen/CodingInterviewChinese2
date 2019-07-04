@@ -16,6 +16,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 题目：输入两棵二叉树A和B，判断B是不是A的子结构。
 
 #include <cstdio>
+#include <iostream>
 
 struct BinaryTreeNode
 {
@@ -102,9 +103,24 @@ void DestroyTree(BinaryTreeNode* pRoot)
     }
 }
 
+void PrintTreeList(BinaryTreeNode* pHead)
+{
+	BinaryTreeNode* pNode = pHead;
+	if (pNode != nullptr)
+	{
+		printf("%f\t", pNode->m_dbValue);
+		PrintTreeList(pNode->m_pLeft);
+		PrintTreeList(pNode->m_pRight);
+	}
+}
 // ====================测试代码====================
 void Test(char* testName, BinaryTreeNode* pRoot1, BinaryTreeNode* pRoot2, bool expected)
 {
+	printf("The first list is: ");
+	PrintTreeList(pRoot1);
+	printf("\nThe second list is: ");
+	PrintTreeList(pRoot2);
+	printf("\nThe expected: %d\n", expected);
     if(HasSubtree(pRoot1, pRoot2) == expected)
         printf("%s passed.\n", testName);
     else
@@ -374,6 +390,7 @@ int main(int argc, char* argv[])
     Test8();
     Test9();
 
+	system("pause");
     return 0;
 }
 

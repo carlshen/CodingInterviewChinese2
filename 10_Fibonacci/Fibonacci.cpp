@@ -16,6 +16,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 题目：写一个函数，输入n，求斐波那契（Fibonacci）数列的第n项。
 
 #include <cstdio>
+#include <iostream>
 
 // ====================方法1：递归====================
 long long Fibonacci_Solution1(unsigned int n)
@@ -154,6 +155,7 @@ int main(int argc, char* argv[])
 
     Test(40, 102334155);
 
+	system("paused");
     return 0;
 }
 

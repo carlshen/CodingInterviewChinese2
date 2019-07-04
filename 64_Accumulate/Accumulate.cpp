@@ -17,7 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 等关键字及条件判断语句（A?B:C）。
 
 #include <cstdio>
-
+#include <iostream>
 // ====================方法一====================
 class Temp
 {
@@ -182,6 +182,7 @@ int main(int argc, char* argv[])
     Test3();
     Test4();
 
+	system("pause");
     return 0;
 }
 

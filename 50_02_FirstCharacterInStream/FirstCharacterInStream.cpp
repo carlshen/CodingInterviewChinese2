@@ -20,7 +20,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 #include <cstdio>
 #include <vector>
 #include <limits>
-
+#include <iostream>
 using namespace std;
 
 class CharStatistics
@@ -70,6 +70,7 @@ private:
 // ====================≤‚ ‘¥˙¬Î====================
 void Test(const char* testName, CharStatistics chars, char expected)
 {
+	printf("%c expected: \n", expected);
     if(testName != nullptr)
         printf("%s begins: ", testName);
 
@@ -103,6 +104,7 @@ int main(int argc, char* argv[])
     chars.Insert('e');
     Test("Test7", chars, 'l');
 
+	system("pause");
     return 0;
 }
 

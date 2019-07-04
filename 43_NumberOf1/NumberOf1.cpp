@@ -19,6 +19,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 #include <cstdio>
 #include <cstring>
 #include <cstdlib>
+#include <iostream>
 
 // ====================·½·¨Ò»====================
 int NumberOf1(unsigned int n);
@@ -106,7 +107,8 @@ void Test(const char* testName, int n, int expected)
 {
     if(testName != nullptr)
         printf("%s begins: \n", testName);
-    
+
+	printf("n= %d, expected= %d \n", n, expected);
     if(NumberOf1Between1AndN_Solution1(n) == expected)
         printf("Solution1 passed.\n");
     else
@@ -136,6 +138,7 @@ int main(int argc, char* argv[])
 {
     Test();
 
+	system("pause");
     return 0;
 }
 

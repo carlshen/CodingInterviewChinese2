@@ -18,7 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 1, 3, 5}中，数字3和它的下标相等。
 
 #include <cstdio>
-
+#include <iostream>
 int GetNumberSameAsIndex(const int* numbers, int length)
 {
     if(numbers == nullptr || length <= 0)
@@ -107,5 +107,6 @@ int main(int argc, char* argv[])
     Test6();
     Test7();
 
+	system("pause");
     return 0;
 }

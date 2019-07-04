@@ -89,6 +89,7 @@ int getMaxValue_solution2(const int* values, int rows, int cols)
 // ====================²âÊÔ´úÂë====================
 void test(const char* testName, const int* values, int rows, int cols, int expected)
 {
+	std::cout << " expected: " << expected << std::endl;
     if(getMaxValue_solution1(values, rows, cols) == expected)
         std::cout << testName << ": solution1 passed." << std::endl;
     else
@@ -172,5 +173,6 @@ int main(int argc, char* argv[])
     test4();
     test5();
 
+	system("pause");
     return 0;
 }

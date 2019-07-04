@@ -17,6 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 数组成一个子数组。求所有子数组的和的最大值。要求时间复杂度为O(n)。
 
 #include <cstdio>
+#include <iostream>
 
 bool g_InvalidInput = false;
 
@@ -51,7 +52,13 @@ void Test(char* testName, int* pData, int nLength, int expected, bool expectedFl
 {
     if(testName != nullptr)
         printf("%s begins: \n", testName);
-
+	printf("expected %d, expectedFlag %d \n", expected, expectedFlag);
+	if (pData != nullptr) {
+		for (int var = 0; var < nLength; var++)
+		{
+			printf(" %d, ", *(pData + var));
+		}
+	}
     int result = FindGreatestSumOfSubArray(pData, nLength);
     if(result == expected && expectedFlag == g_InvalidInput)
         printf("Passed.\n");
@@ -95,6 +102,7 @@ int main(int argc, char* argv[])
     Test3();
     Test4();
 
+	system("pause");
     return 0;
 }
 

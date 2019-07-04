@@ -18,6 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 4¡«6ºÍ7¡«8¡£
 
 #include <cstdio>
+#include <iostream>
 
 void PrintContinuousSequence(int small, int big);
 
@@ -76,6 +77,7 @@ int main(int argc, char* argv[])
     Test("test5", 15);
     Test("test6", 100);
 
+	system("pause");
     return 0;
 }
 

@@ -19,10 +19,25 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 但它不能进入方格(35, 38)，因为3+5+3+8=19。请问该机器人能够到达多少个格子？
 
 #include <cstdio>
+#include <iostream>
 
 int movingCountCore(int threshold, int rows, int cols, int row, int col, bool* visited);
 bool check(int threshold, int rows, int cols, int row, int col, bool* visited);
 int getDigitSum(int number);
+
+void printVisited(bool *visited, int rows, int cols) {
+	printf("visited: \n");
+	for (int var = 0; var < rows; ++var)
+	{
+		for (int var2 = 0; var2 < rows; ++var2)
+		{
+			if (visited[var * cols + var2]) {
+				printf("%d,%d; ", var, var2);
+			}
+		}
+	}
+	printf("\n");
+}
 
 int movingCount(int threshold, int rows, int cols)
 {
@@ -35,12 +50,13 @@ int movingCount(int threshold, int rows, int cols)
 
     int count = movingCountCore(threshold, rows, cols,
         0, 0, visited);
-
+	if (count > 0) {
+		printVisited(visited, rows, cols);
+	}
     delete[] visited;
 
     return count;
 }
-
 int movingCountCore(int threshold, int rows, int cols, int row,
     int col, bool* visited)
 {
@@ -163,5 +179,6 @@ int main(int agrc, char* argv[])
     test8();
     test9();
 
+	system("pause");
     return 0;
 }

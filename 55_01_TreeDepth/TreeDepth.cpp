@@ -17,6 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度。
 
 #include <cstdio>
+#include <iostream>
 #include "..\Utilities\BinaryTree.h"
 
 int TreeDepth(const BinaryTreeNode* pRoot)
@@ -34,6 +35,7 @@ int TreeDepth(const BinaryTreeNode* pRoot)
 void Test(const char* testName, const BinaryTreeNode* pRoot, int expected)
 {
     int result = TreeDepth(pRoot);
+	printf("expected: %d result: %d \n", expected,  result);
     if(expected == result)
         printf("%s passed.\n", testName);
     else
@@ -144,6 +146,7 @@ int main(int argc, char* argv[])
     Test4();
     Test5();
 
+	system("pause");
     return 0;
 }
 

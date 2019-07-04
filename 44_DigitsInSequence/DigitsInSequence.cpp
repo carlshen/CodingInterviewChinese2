@@ -74,6 +74,8 @@ int beginNumber(int digits)
 // ====================测试代码====================
 void test(const char* testName, int inputIndex, int expectedOutput)
 {
+
+	cout << "input: " << inputIndex << ", expected: " << expectedOutput << endl;
 	if(digitAtIndex(inputIndex) == expectedOutput)
 		cout << testName << " passed." << endl;
 	else
@@ -92,5 +94,7 @@ int main()
 	test("Test7", 1000, 3); // 数字370的第一位，3
 	test("Test8", 1001, 7); // 数字370的第二位，7
 	test("Test9", 1002, 0); // 数字370的第三位，0
+
+	system("pause");
 	return 0;
 }

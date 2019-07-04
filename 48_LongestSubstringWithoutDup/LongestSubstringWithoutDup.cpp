@@ -100,6 +100,7 @@ int longestSubstringWithoutDuplication_2(const std::string& str)
 void testSolution1(const std::string& input, int expected)
 {
     int output = longestSubstringWithoutDuplication_1(input);
+	std::cout << "output: " << output << ", expected: " << expected << std::endl;
     if(output == expected)
         std::cout << "Solution 1 passed, with input: " << input << std::endl;
     else
@@ -109,6 +110,7 @@ void testSolution1(const std::string& input, int expected)
 void testSolution2(const std::string& input, int expected)
 {
     int output = longestSubstringWithoutDuplication_2(input);
+	std::cout << "output: " << output << ", expected: " << expected << std::endl;
     if(output == expected)
         std::cout << "Solution 2 passed, with input: " << input << std::endl;
     else
@@ -204,5 +206,6 @@ int main(int argc, char* argv[])
     test9();
     test10();
 
+	system("pause");
     return 0;
 }

@@ -17,7 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 成一个逆序对。输入一个数组，求出这个数组中的逆序对的总数。
 
 #include <cstdio>
-
+#include <iostream>
 int InversePairsCore(int* data, int* copy, int start, int end);
 
 int InversePairs(int* data, int length)
@@ -169,6 +169,7 @@ int main(int argc, char* argv[])
     Test7();
     Test8();
 
+	system("pause");
     return 0;
 }
 

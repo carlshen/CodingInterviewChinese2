@@ -17,6 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 有路径。从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。
 
 #include <cstdio>
+#include <iostream>
 #include "..\Utilities\BinaryTree.h"
 #include <vector>
 
@@ -210,6 +211,7 @@ int main(int argc, char* argv[])
     Test5();
     Test6();
 
+	system("pause");
     return 0;
 }
 

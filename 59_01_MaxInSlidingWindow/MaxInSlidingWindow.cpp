@@ -20,6 +20,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 #include <cstdio>
 #include <vector>
 #include <deque>
+#include <iostream>
 
 using namespace std;
 
@@ -61,6 +62,7 @@ void Test(const char* testName, const vector<int>& num, unsigned int size, const
     if(testName != nullptr)
         printf("%s begins: ", testName);
 
+	printf("size %d \n", size);
     vector<int> result = maxInWindows(num, size);
 
     vector<int>::const_iterator iterResult = result.begin();
@@ -211,5 +213,6 @@ int main(int argc, char* argv[])
     Test8();
     Test9();
 
+	system("pause");
     return 0;
 }

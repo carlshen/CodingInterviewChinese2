@@ -20,7 +20,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 #include <cstdio>
 #include <deque>
 #include <exception>
-
+#include <iostream>
 using namespace std;
 
 template<typename T> class QueueWithMax
@@ -79,6 +79,7 @@ void Test(const char* testName, const QueueWithMax<int>& queue, int expected)
     if(testName != nullptr)
         printf("%s begins: ", testName);
 
+	printf(" expected %d \n", expected);
     if(queue.max() == expected)
         printf("Passed.\n");
     else
@@ -144,5 +145,6 @@ int main(int argc, char* argv[])
     queue.push_back(1);
     Test("Test13", queue, 5);
 
+	system("pause");
     return 0;
 }

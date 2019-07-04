@@ -17,6 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 树中的结点除了有两个分别指向左右子结点的指针以外，还有一个指向父结点的指针。
 
 #include <stdio.h>
+#include <iostream>
 
 struct BinaryTreeNode
 {
@@ -237,4 +238,6 @@ int main(int argc, char* argv[])
     Test8_11();
     Test12_15();
     Test16();
+	system("pause");
+	return 0;
 }

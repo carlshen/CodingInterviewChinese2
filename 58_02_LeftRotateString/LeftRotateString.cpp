@@ -18,6 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 字2，该函数将返回左旋转2位得到的结果"cdefgab"。
 
 #include <cstdio>
+#include <iostream>
 #include "..\Utilities\StringUtil.h"
 #include <string.h>
 
@@ -51,7 +52,10 @@ void Test(const char* testName, char* input, int num, const char* expectedResult
     if(testName != nullptr)
         printf("%s begins: ", testName);
 
+	printf("\nbefore num: %d, input: %s \n ", num, input);
+	printf("before expectedResult: %s \n ", expectedResult);
     char* result = LeftRotateString(input, num);
+	printf("after reverse result: %s \n ", result);
 
     if((input == nullptr && expectedResult == nullptr)
         || (input != nullptr && strcmp(result, expectedResult) == 0))
@@ -120,6 +124,7 @@ int main(int argc, char* argv[])
     Test5();
     Test6();
 
+	system("pause");
     return 0;
 }
 

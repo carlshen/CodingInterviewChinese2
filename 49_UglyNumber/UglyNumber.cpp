@@ -18,6 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 习惯上我们把1当做第一个丑数。
 
 #include <cstdio>
+#include <iostream>
 
 // ====================算法1的代码====================
 bool IsUgly(int number)
@@ -97,6 +98,7 @@ int Min(int number1, int number2, int number3)
 // ====================测试代码====================
 void Test(int index, int expected)
 {
+	std::cout << "index: " << index << ", expected: " << expected << std::endl;
     if(GetUglyNumber_Solution1(index) == expected)
         printf("solution1 passed\n");
     else
@@ -127,6 +129,7 @@ int main(int argc, char* argv[])
 
     Test(0, 0);
 
+	system("pause");
     return 0;
 }
 

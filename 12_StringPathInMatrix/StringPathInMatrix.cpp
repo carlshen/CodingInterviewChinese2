@@ -26,6 +26,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 #include <cstdio>
 #include <string>
 #include <stack>
+#include <iostream>
 
 using namespace std;
 
@@ -47,11 +48,21 @@ bool hasPath(const char* matrix, int rows, int cols, const char* str)
             if(hasPathCore(matrix, rows, cols, row, col, str,
                 pathLength, visited))
             {
+				printf("path: %s \nvisited: ", str);
+				for (int var = 0; var < rows; ++var)
+				{
+					for (int var2 = 0; var2 < rows; ++var2)
+					{
+						if (visited[var * cols + var2]) {
+							printf("%d,%d; ", var, var2);
+						}
+					}
+				}
+				printf("\n");
                 return true;
             }
         }
     }
-
     delete[] visited;
 
     return false;
@@ -269,5 +280,6 @@ int main(int argc, char* argv[])
     Test11();
     Test12();
 
+	system("pause");
     return 0;
 }

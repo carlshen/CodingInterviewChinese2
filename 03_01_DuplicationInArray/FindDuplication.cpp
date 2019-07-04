@@ -18,6 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 那么对应的输出是重复的数字2或者3。
 
 #include <cstdio>
+#include <iostream>
 
 // 参数:
 //        numbers:     一个整数数组
@@ -81,7 +82,7 @@ void test(char* testName, int numbers[], int lengthNumbers, int expected[], int 
         if(validArgument)
         {
             if(contains(expected, expectedExpected, duplication))
-                printf("Passed.\n");
+                printf("Passed, with duplication %d \n", duplication);
             else
                 printf("FAILED.\n");
         }
@@ -148,4 +149,6 @@ void main()
     test4();
     test5();
     test6();
+
+	system("pause");
 }

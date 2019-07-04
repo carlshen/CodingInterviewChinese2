@@ -18,7 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 
 #include <cstdio>
 #include <list>
-
+#include <iostream>
 using namespace std;
 
 // ====================·½·¨1====================
@@ -74,6 +74,7 @@ void Test(const char* testName, unsigned int n, unsigned int m, int expected)
     if(testName != nullptr)
         printf("%s begins: \n", testName);
 
+	printf("n = %d,  m: %d, expected: %d \n", n, m, expected);
     if(LastRemaining_Solution1(n, m) == expected)
         printf("Solution1 passed.\n");
     else
@@ -126,6 +127,7 @@ int main(int argc, char* argv[])
     Test5();
     Test6();
 
+	system("pause");
     return 0;
 }
 

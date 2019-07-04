@@ -19,6 +19,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 和"ab*ac*a"匹配，但与"aa.a"及"ab*a"均不匹配。
 
 #include <cstdio>
+#include <iostream>
 
 bool matchCore(const char* str, const char* pattern);
 
@@ -59,12 +60,15 @@ bool matchCore(const char* str, const char* pattern)
 }
 
 // ====================测试代码====================
-void Test(const char* testName, const char* string, const char* pattern, bool expected)
+void Test(const char* testName, const char* str, const char* pattern, bool expected)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
 
-    if(match(string, pattern) == expected)
+	std::cout << "test string: " << str << std::endl;
+	std::cout << "test pattern: " << pattern << std::endl;
+	std::cout << "test expected: " << expected << std::endl;
+    if(match(str, pattern) == expected)
         printf("Passed.\n");
     else
         printf("FAILED.\n");
@@ -103,6 +107,7 @@ int main(int argc, char* argv[])
     Test("Test29", "bbbba", ".*a*a", true);
     Test("Test30", "bcbbabab", ".*a*a", false);
 
+	system("pause");
     return 0;
 }
 

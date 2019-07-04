@@ -16,6 +16,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 题目：输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字。
 
 #include <cstdio>
+#include <iostream>
 
 void PrintMatrixInCircle(int** numbers, int columns, int rows, int start);
 void printNumber(int number);
@@ -202,6 +203,7 @@ int main(int argc, char* argv[])
     */
     Test(5, 4);
 
+	system("pause");
     return 0;
 }
 

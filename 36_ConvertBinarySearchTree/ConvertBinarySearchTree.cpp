@@ -17,6 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 不能创建任何新的结点，只能调整树中结点指针的指向。
 
 #include <cstdio>
+#include <iostream>
 #include "..\Utilities\BinaryTree.h"
 
 void ConvertNode(BinaryTreeNode* pNode, BinaryTreeNode** pLastNodeInList);
@@ -208,6 +209,7 @@ int main(int argc, char* argv[])
     Test4();
     Test5();
 
+	system("pause");
     return 0;
 }
 

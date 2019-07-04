@@ -17,6 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 奇数位于数组的前半部分，所有偶数位于数组的后半部分。
 
 #include <cstdio>
+#include <iostream>
 
 void Reorder(int *pData, unsigned int length, bool (*func)(int));
 bool isEven(int n);
@@ -167,6 +168,7 @@ int main(int argc, char* argv[])
     Test5();
     Test6();
 
+	system("pause");
     return 0;
 }
 

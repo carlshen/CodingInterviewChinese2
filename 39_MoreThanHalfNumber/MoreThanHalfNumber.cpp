@@ -18,6 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 出现了5次，超过数组长度的一半，因此输出2。
 
 #include <cstdio>
+#include <iostream>
 #include "..\Utilities\Array.h"
 
 bool g_bInputInvalid = false;
@@ -185,6 +186,7 @@ int main(int argc, char* argv[])
     Test5();
     Test6();
 
+	system("pause");
     return 0;
 }
 

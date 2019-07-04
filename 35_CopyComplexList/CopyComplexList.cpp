@@ -18,6 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 结点外，还有一个m_pSibling 指向链表中的任意结点或者nullptr。
 
 #include <cstdio>
+#include <iostream>
 #include "ComplexList.h"
 
 void CloneNodes(ComplexListNode* pHead);
@@ -193,6 +194,7 @@ int main(int argc, char* argv[])
     Test4();
     Test5();
 
+	system("pause");
     return 0;
 }
 

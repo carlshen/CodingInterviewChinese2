@@ -18,7 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 
 #include <cstdio>
 #include <vector>
-
+#include <iostream>
 using namespace std;
 
 void BuildProductionArray(const vector<double>& input, vector<double>& output)
@@ -140,5 +140,6 @@ int main(int argc, char* argv[])
     test4();
     test5();
 
+	system("pause");
     return 0;
 }

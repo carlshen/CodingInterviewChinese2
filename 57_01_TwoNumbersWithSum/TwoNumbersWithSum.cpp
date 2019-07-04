@@ -17,6 +17,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 的和正好是s。如果有多对数字的和等于s，输出任意一对即可。
 
 #include <cstdio>
+#include <iostream>
 
 bool FindNumbersWithSum(int data[], int length, int sum, 
                         int* num1, int* num2)
@@ -106,6 +107,7 @@ int main(int argc, char* argv[])
     Test3();
     Test4();
 
+	system("pause");
     return 0;
 }
 

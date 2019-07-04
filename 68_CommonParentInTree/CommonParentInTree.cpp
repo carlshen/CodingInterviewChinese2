@@ -18,7 +18,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 #include <cstdio>
 #include "..\Utilities\Tree.h"
 #include <list>
-
+#include <iostream>
 using namespace std;
 
 bool GetNodePath(const TreeNode* pRoot, const TreeNode* pNode, list<const TreeNode*>& path)
@@ -199,6 +199,7 @@ int main(int argc, char* argv[])
     Test3();
     Test4();
 
+	system("pause");
     return 0;
 }
 
