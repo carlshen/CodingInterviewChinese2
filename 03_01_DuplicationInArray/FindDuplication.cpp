@@ -16,6 +16,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 // 题目：在一个长度为n的数组里的所有数字都在0到n-1的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，
 // 也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。例如，如果输入长度为7的数组{2, 3, 1, 0, 2, 5, 3}，
 // 那么对应的输出是重复的数字2或者3。
+// 使用cpp11 array功能
 
 #include <cstdio>
 #include <iostream>
@@ -33,12 +34,12 @@ bool duplicate(std::array <int, 5> numbers, int *duplication)
     if(numbers.size() <= 0)
         return false;
 
+	std::size_t index = numbers.size();
 	for (std::array<int, 5>::iterator it = numbers.begin(); it < numbers.end(); it++) {
-		if (*it < 0 || *it > 5) {
+		if (*it < 0 || *it > (index - 1)) {
 			return false;
 		}
 	};
-	std::size_t index = numbers.size();
 	for (std::size_t it = 0; it < index; it++)
     {
         while(it != numbers.at(it))
@@ -149,7 +150,7 @@ void main()
     test2();
     test3();
     test4();
-    //test5();
+    test5();
     test6();
 
 	system("pause");
