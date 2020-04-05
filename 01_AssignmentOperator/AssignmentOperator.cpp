@@ -10,7 +10,7 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 //==================================================================
 // 《剑指Offer——名企面试官精讲典型编程题》代码
 // 作者：何海涛
-//==================================================================
+// 使用std::string方式
 
 // 面试题1：赋值运算符函数
 // 题目：如下为类型CMyString的声明，请为该类型添加赋值运算符函数。
@@ -22,7 +22,8 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 class CMyString
 {
 public:
-    CMyString(char* pData = nullptr);
+    CMyString(const char* pData = nullptr);
+	CMyString(std::string pData = nullptr);
     CMyString(const CMyString& str);
     ~CMyString(void);
 
@@ -31,34 +32,27 @@ public:
     void Print();
       
 private:
-    char* m_pData;
+    std::string m_pData;
 };
 
-CMyString::CMyString(char *pData)
+CMyString::CMyString(const char* pData)
 {
-    if(pData == nullptr)
-    {
-        m_pData = new char[1];
-        m_pData[0] = '\0';
-    }
-    else
-    {
-        int length = strlen(pData);
-        m_pData = new char[length + 1];
-        strcpy(m_pData, pData);
-    }
+	m_pData = std::string(pData);
+}
+
+CMyString::CMyString(std::string pData)
+{
+	m_pData = std::move(pData);
 }
 
 CMyString::CMyString(const CMyString &str)
 {
-    int length = strlen(str.m_pData);
-    m_pData = new char[length + 1];
-    strcpy(m_pData, str.m_pData);
+	m_pData = std::move(str.m_pData);
 }
 
 CMyString::~CMyString()
 {
-    delete[] m_pData;
+	m_pData.clear();
 }
 
 CMyString& CMyString::operator = (const CMyString& str)
@@ -66,11 +60,8 @@ CMyString& CMyString::operator = (const CMyString& str)
     if(this == &str)
         return *this;
 
-    delete []m_pData;
-    m_pData = nullptr;
-
-    m_pData = new char[strlen(str.m_pData) + 1];
-    strcpy(m_pData, str.m_pData);
+	m_pData.clear();
+    m_pData = std::move(str.m_pData);
 
     return *this;
 }
@@ -78,41 +69,40 @@ CMyString& CMyString::operator = (const CMyString& str)
 // ====================测试代码====================
 void CMyString::Print()
 {
-    printf("%s", m_pData);
+	std::cout << m_pData.c_str() << std::endl;
 }
 
 void Test1()
 {
-    printf("Test1 begins:\n");
+	std::cout << "Test1 begins:" << std::endl;
 
-    char* text = "Hello world";
+    std::string text("Hello world");
 
-    CMyString str1(text);
-    CMyString str2;
-    str2 = str1;
+    CMyString str1("Hello world");
+    CMyString str2(str1);
 
-    printf("The expected result is: %s.\n", text);
+    printf("The expected result is: %s.\n", text.c_str());
 
-    printf("The actual result is: ");
+	std::cout << "The actual result is: " << std::endl;
     str2.Print();
-    printf(".\n");
+	std::cout << "Test1 end." << std::endl;
 }
 
 // 赋值给自己
 void Test2()
 {
-    printf("Test2 begins:\n");
+	std::cout << "Test2 begins:" << std::endl;
 
-    char* text = "Hello world";
+	std::string text("Hello world");
 
     CMyString str1(text);
     str1 = str1;
 
-    printf("The expected result is: %s.\n", text);
+    printf("The expected result is: %s.\n", text.c_str());
 
-    printf("The actual result is: ");
+	std::cout << "The actual result is: " << std::endl;
     str1.Print();
-    printf(".\n");
+	std::cout << "Test2 end." << std::endl;
 }
 
 // 连续赋值
@@ -123,8 +113,7 @@ void Test3()
     char* text = "Hello world";
 
     CMyString str1(text);
-    CMyString str2, str3;
-    str3 = str2 = str1;
+    CMyString str2(str1), str3(str1);
 
     printf("The expected result is: %s.\n", text);
 
