@@ -19,71 +19,77 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 
 #include <stdio.h>
 #include <iostream>
-
-bool scanUnsignedInteger(const char** str);
-bool scanInteger(const char** str);
+#include <cstring>
+using std::string;
 
 // 数字的格式可以用A[.[B]][e|EC]或者.B[e|EC]表示，其中A和C都是
 // 整数（可以有正负号，也可以没有），而B是一个无符号整数
-bool isNumeric(const char* str)
+bool isNumeric(string str)
 {
-    if(str == nullptr)
+    if(str.empty())
         return false;
 
-    bool numeric = scanInteger(&str);
-
+	size_t originalLength = str.length();
+	//std::cout << "isNumeric size: " << originalLength << std::endl;
+	size_t index = 0;
+	// +- in the first place
+	if (str.at(index) == '+' || str.at(index) == '-') {
+		index++;
+	}
+	/*if (str[index] == '+' || str[index] == '-') {
+		index++;
+	}*/
+	// some integers
+	bool numeric = false;
+	while (str[index] != '\0' && str[index] >= '0' && str[index] <= '9') {
+		index++;
+		numeric = true;
+	}
     // 如果出现'.'，接下来是数字的小数部分
-    if(*str == '.')
+    if(str[index] == '.')
     {
-        ++str;
+        ++index;
 
         // 下面一行代码用||的原因：
         // 1. 小数可以没有整数部分，例如.123等于0.123；
         // 2. 小数点后面可以没有数字，例如233.等于233.0；
         // 3. 当然小数点前面和后面可以有数字，例如233.666
-        numeric = scanUnsignedInteger(&str) || numeric;
+		while (str[index] != '\0' && str[index] >= '0' && str[index] <= '9') {
+			index++;
+			numeric = true;
+		}
     }
 
     // 如果出现'e'或者'E'，接下来跟着的是数字的指数部分
-    if(*str == 'e' || *str == 'E')
+    if(str[index] == 'e' || str[index] == 'E')
     {
-        ++str;
-
+		index++;
+		// e/E also can have +- 
+		if (str[index] == '+' || str[index] == '-') {
+			index++;
+		}
         // 下面一行代码用&&的原因：
         // 1. 当e或E前面没有数字时，整个字符串不能表示数字，例如.e1、e1；
         // 2. 当e或E后面没有整数时，整个字符串不能表示数字，例如12e、12e+5.4
-        numeric = numeric && scanInteger(&str);
+		while (str[index] != '\0' && str[index] >= '0' && str[index] <= '9') {
+			index++;
+			if (numeric) {
+				numeric = true;
+			}
+		}
     }
 
-    return numeric && *str == '\0';
-}
-
-bool scanUnsignedInteger(const char** str)
-{
-    const char* before = *str;
-    while(**str != '\0' && **str >= '0' && **str <= '9')
-        ++(*str);
-
-    // 当str中存在若干0-9的数字时，返回true
-    return *str > before;
-}
-
-// 整数的格式可以用[+|-]B表示, 其中B为无符号整数
-bool scanInteger(const char** str)
-{
-    if(**str == '+' || **str == '-')
-        ++(*str);
-    return scanUnsignedInteger(str);
+    return numeric && str[index] == '\0';
 }
 
 // ====================测试代码====================
-void Test(const char* testName, const char* str, bool expected)
+void Test(const char* testName, string str, bool expected)
 {
     if(testName != nullptr)
         printf("%s begins: ", testName);
 
-	if (str != nullptr) {
-		std::cout << "test string: " << str << std::endl;
+	if (!str.empty()) {
+		std::cout << "test string: " << str.c_str() << std::endl;
 		std::cout << "test expected: " << expected << std::endl;
 	}
     if(isNumeric(str) == expected)
