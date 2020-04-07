@@ -19,49 +19,67 @@ https://github.com/zhedahht/CodingInterviewChinese2/blob/master/LICENSE.txt)
 
 #include <cstdio>
 #include <iostream>
-#include "..\Utilities\StringUtil.h"
-#include <string.h>
+using std::string;
 
-char* LeftRotateString(char* pStr, int n)
+void Reverse(std::string pData, std::string::iterator pBegin, std::string::iterator pEnd)
 {
-    if(pStr != nullptr)
-    {
-        int nLength = static_cast<int>(strlen(pStr));
-        if(nLength > 0 && n > 0 && n < nLength)
-        {
-            char* pFirstStart = pStr;
-            char* pFirstEnd = pStr + n - 1;
-            char* pSecondStart = pStr + n;
-            char* pSecondEnd = pStr + nLength - 1;
+	if (pData.empty())
+		return;
+	if (pBegin >= pEnd)
+		return;
 
-            // 翻转字符串的前面n个字符
-            Reverse(pFirstStart, pFirstEnd);
-            // 翻转字符串的后面部分
-            Reverse(pSecondStart, pSecondEnd);
-            // 翻转整个字符串
-            Reverse(pFirstStart, pSecondEnd);
-        }
-    }
+	while (pBegin < pEnd)
+	{
+		char temp = *pBegin;
+		*pBegin = *pEnd;
+		*pEnd = temp;
 
-    return pStr;
+		pBegin++, pEnd--;
+	}
+}
+
+string LeftRotateString(string pStr, int n)
+{
+	if (pStr.empty())
+		return pStr;
+	if (n <= 0 || n >= pStr.length()) {
+		return pStr;
+	}
+	std::string pData(pStr);
+	std::string::iterator pBegin = pData.begin();
+	std::string::iterator pEnd = pBegin + n - 1;
+	// reverse left part n
+	Reverse(pData, pBegin, pEnd);
+	//std::cout << "LeftRotateString pData: " << pData.c_str() << std::endl;
+	pBegin = pEnd + 1;
+	pEnd = pData.end() - 1;
+	// reverse right part size - n
+	Reverse(pData, pBegin, pEnd);
+	//std::cout << "LeftRotateString pData: " << pData.c_str() << std::endl;
+	pBegin = pData.begin();
+	// rever all
+	Reverse(pData, pBegin, pEnd);
+	//std::cout << "LeftRotateString pData: " << pData.c_str() << std::endl;
+
+    return pData;
 }
 
 // ====================测试代码====================
-void Test(const char* testName, char* input, int num, const char* expectedResult)
+void Test(const char* testName, string input, int num, string expectedResult)
 {
     if(testName != nullptr)
-        printf("%s begins: ", testName);
+        printf("%s begins: \n", testName);
 
-	printf("\nbefore num: %d, input: %s \n ", num, input);
-	printf("before expectedResult: %s \n ", expectedResult);
-    char* result = LeftRotateString(input, num);
-	printf("after reverse result: %s \n ", result);
+	std::cout << "before num: " << num << " , input: " << input.c_str() << std::endl;
+	std::cout << "before expectedResult: " << expectedResult.c_str() << std::endl;
+	string result = LeftRotateString(input, num);
+	std::cout << "after reverse result: " << result.c_str() << std::endl;
 
-    if((input == nullptr && expectedResult == nullptr)
-        || (input != nullptr && strcmp(result, expectedResult) == 0))
-        printf("Passed.\n\n");
+    if((input.empty() && expectedResult.empty())
+        || (!input.empty() && result == expectedResult))
+		std::cout << "Passed." << std::endl;
     else
-        printf("Failed.\n\n");
+		std::cout << "Failed. " << std::endl;
 }
 
 // 功能测试
@@ -94,7 +112,7 @@ void Test3()
 // 鲁棒性测试
 void Test4()
 {
-    Test("Test4", nullptr, 6, nullptr);
+    Test("Test4", "", 6, "");
 }
 
 // 鲁棒性测试
